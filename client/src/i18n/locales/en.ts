@@ -77,15 +77,15 @@ const en = {
     lightMode: "Light Mode"
   },
   about: {
-    title: "About WealthVista",
+    title: "About Savings Calculator",
     appInfo: "App Information",
-    description: "WealthVista is a comprehensive financial calculator designed to help you plan your savings and investments effectively.",
+    description: "Savings Calculator is a comprehensive financial calculator designed to help you plan your savings and investments effectively.",
     version: "Version 1.0.0",
     credits: "Credits",
     creator: "Created by",
     project: "Project: SAP",
     thankYou: "Thank You Note",
-    thankYouMessage: "Thank you for using WealthVista. This application is designed to help you make better financial decisions by providing accurate calculations and visual representations of your investments."
+    thankYouMessage: "Thank you for using Savings Calculator. This application is designed to help you make better financial decisions by providing accurate calculations and visual representations of your investments."
   }
 };
 

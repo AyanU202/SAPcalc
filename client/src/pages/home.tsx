@@ -25,7 +25,7 @@ export default function Home() {
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <div className="flex items-center space-x-2">
             <Calculator className="h-6 w-6 text-yellow-300" />
-            <h1 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-yellow-200 to-yellow-400">WealthVista</h1>
+            <h1 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-yellow-200 to-yellow-400">Savings Calculator</h1>
           </div>
           
           <LanguageSelector />
@@ -85,13 +85,13 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">
-              <p className="text-sm">© 2023 WealthVista - {t('footer.createdBy')} Ayan Roshan Umredkar</p>
+              <p className="text-sm">© 2025 Savings Calculator - {t('footer.createdBy')} Ayan Roshan Umredkar</p>
             </div>
             <div className="flex space-x-4">
               <Button
                 variant="outline"
                 size="sm"
-                className="text-white border-white/30 hover:bg-white/10 hover:text-white"
+                className="text-white border-white/50 bg-black/30 hover:bg-black/50 hover:text-white font-medium shadow-lg"
                 onClick={() => setShowAboutModal(true)}
               >
                 <InfoIcon className="h-4 w-4 mr-1 text-yellow-300" />
@@ -100,7 +100,7 @@ export default function Home() {
               <Button
                 variant="outline"
                 size="sm"
-                className="text-white border-white/30 hover:bg-white/10 hover:text-white"
+                className="text-white border-white/50 bg-black/30 hover:bg-black/50 hover:text-white font-medium shadow-lg"
                 onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
               >
                 {theme === 'dark' ? (
