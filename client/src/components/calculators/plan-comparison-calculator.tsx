@@ -105,11 +105,13 @@ export function PlanComparisonCalculator() {
   }, [setCalculationResult]);
 
   return (
-    <Card>
-      <CardHeader>
+    <Card className="border-cyan-200 dark:border-cyan-800 shadow-md overflow-hidden">
+      <CardHeader className="bg-gradient-to-r from-cyan-50 to-blue-50 dark:from-cyan-950/50 dark:to-blue-950/50 border-b border-cyan-100 dark:border-cyan-800">
         <CardTitle className="flex items-center">
-          <Diff className="h-5 w-5 mr-2 text-primary" />
-          {t('compareCalc.title')}
+          <Diff className="h-5 w-5 mr-2 text-cyan-600 dark:text-cyan-400" />
+          <span className="bg-gradient-to-r from-cyan-700 to-blue-700 dark:from-cyan-400 dark:to-blue-400 text-transparent bg-clip-text font-bold">
+            {t('compareCalc.title')}
+          </span>
         </CardTitle>
       </CardHeader>
       <CardContent>
@@ -279,7 +281,10 @@ export function PlanComparisonCalculator() {
               </div>
             </div>
             
-            <Button type="submit" className="w-full">
+            <Button 
+              type="submit" 
+              className="w-full bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 transition-all duration-200 shadow-md"
+            >
               <Diff className="h-4 w-4 mr-2" />
               {t('compareCalc.comparePlans')}
             </Button>

@@ -189,7 +189,10 @@ export function GoalBasedCalculator() {
               )}
             />
             
-            <Button type="submit" className="w-full">
+            <Button 
+              type="submit" 
+              className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 transition-all duration-200 shadow-md"
+            >
               <CalculatorIcon className="h-4 w-4 mr-2" />
               {t('common.calculate')}
             </Button>

@@ -85,11 +85,13 @@ export function BasicSavingsCalculator() {
   };
 
   return (
-    <Card>
-      <CardHeader>
+    <Card className="border-emerald-200 dark:border-emerald-800 shadow-md overflow-hidden">
+      <CardHeader className="bg-gradient-to-r from-emerald-50 to-green-50 dark:from-emerald-950/50 dark:to-green-950/50 border-b border-emerald-100 dark:border-emerald-800">
         <CardTitle className="flex items-center">
-          <PiggyBankIcon className="h-5 w-5 mr-2 text-primary" />
-          {t('basicCalc.title')}
+          <PiggyBankIcon className="h-5 w-5 mr-2 text-emerald-600 dark:text-emerald-400" />
+          <span className="bg-gradient-to-r from-emerald-700 to-green-700 dark:from-emerald-400 dark:to-green-400 text-transparent bg-clip-text font-bold">
+            {t('basicCalc.title')}
+          </span>
         </CardTitle>
       </CardHeader>
       <CardContent>
@@ -229,7 +231,10 @@ export function BasicSavingsCalculator() {
               )}
             />
             
-            <Button type="submit" className="w-full">
+            <Button 
+              type="submit" 
+              className="w-full bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-700 hover:to-green-700 transition-all duration-200 shadow-md"
+            >
               <CalculatorIcon className="h-4 w-4 mr-2" />
               {t('common.calculate')}
             </Button>

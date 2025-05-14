@@ -156,27 +156,32 @@ export function ChartVisualization() {
   // If there's no calculation result, display a placeholder
   if (!calculationResult) {
     return (
-      <Card>
-        <CardHeader>
+      <Card className="border-blue-200 dark:border-blue-800 shadow-md overflow-hidden">
+        <CardHeader className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950/50 dark:to-indigo-950/50 border-b border-blue-100 dark:border-blue-800">
           <CardTitle className="flex items-center">
-            <BarChart3Icon className="h-5 w-5 mr-2 text-primary" />
-            {t('chart.title')}
+            <BarChart3Icon className="h-5 w-5 mr-2 text-blue-600 dark:text-blue-400" />
+            <span className="bg-gradient-to-r from-blue-700 to-indigo-700 dark:from-blue-400 dark:to-indigo-400 text-transparent bg-clip-text font-bold">
+              {t('chart.title')}
+            </span>
           </CardTitle>
         </CardHeader>
         <CardContent className="flex flex-col items-center justify-center h-80 text-center text-gray-500">
-          <BarChart3Icon className="h-16 w-16 mb-4 opacity-20" />
-          <p>{t('chart.noData')}</p>
+          <BarChart3Icon className="h-20 w-20 mb-4 opacity-20 text-blue-400 dark:text-blue-600" />
+          <p className="text-lg text-gray-600 dark:text-gray-400">{t('chart.noData')}</p>
+          <div className="w-16 h-1 bg-gradient-to-r from-blue-400 to-indigo-400 rounded-full mt-4"></div>
         </CardContent>
       </Card>
     );
   }
 
   return (
-    <Card>
-      <CardHeader>
+    <Card className="border-blue-200 dark:border-blue-800 shadow-md overflow-hidden">
+      <CardHeader className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950/50 dark:to-indigo-950/50 border-b border-blue-100 dark:border-blue-800">
         <CardTitle className="flex items-center">
-          <BarChart3Icon className="h-5 w-5 mr-2 text-primary" />
-          {t('chart.title')}
+          <BarChart3Icon className="h-5 w-5 mr-2 text-blue-600 dark:text-blue-400" />
+          <span className="bg-gradient-to-r from-blue-700 to-indigo-700 dark:from-blue-400 dark:to-indigo-400 text-transparent bg-clip-text font-bold">
+            {t('chart.title')}
+          </span>
         </CardTitle>
       </CardHeader>
       <CardContent>
