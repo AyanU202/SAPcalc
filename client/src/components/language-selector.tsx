@@ -5,6 +5,7 @@ import { Languages, ChevronDownIcon } from "lucide-react";
 
 const languages = [
   { code: "en", label: "English", flag: "🇺🇸" },
+  { code: "hi", label: "हिन्दी (Hindi)", flag: "🇮🇳" },
   { code: "ta", label: "தமிழ் (Tamil)", flag: "🇮🇳" },
   { code: "te", label: "తెలుగు (Telugu)", flag: "🇮🇳" },
   { code: "ka", label: "ಕನ್ನಡ (Kannada)", flag: "🇮🇳" },

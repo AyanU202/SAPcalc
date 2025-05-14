@@ -5,6 +5,7 @@ import ta from './locales/ta';
 import te from './locales/te';
 import ka from './locales/ka';
 import ml from './locales/ml';
+import hi from './locales/hi';
 
 // Initialize i18next
 i18n
@@ -16,6 +17,7 @@ i18n
       te: { translation: te },
       ka: { translation: ka },
       ml: { translation: ml },
+      hi: { translation: hi },
     },
     lng: 'en',
     fallbackLng: 'en',
