@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Calculator, InfoIcon, SunIcon, MoonIcon } from "lucide-react";
+import { Calculator, InfoIcon, SunIcon, MoonIcon, FlagIcon, Diff, PiggyBankIcon } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { LanguageSelector } from "@/components/language-selector";
 import { GoalBasedCalculator } from "@/components/calculators/goal-based-calculator";
@@ -20,11 +20,11 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
       {/* Header */}
-      <header className="bg-primary text-white shadow-md">
-        <div className="container mx-auto px-4 py-3 flex justify-between items-center">
+      <header className="bg-gradient-to-r from-blue-700 via-indigo-700 to-purple-700 text-white shadow-md">
+        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <div className="flex items-center space-x-2">
             <Calculator className="h-6 w-6 text-yellow-300" />
-            <h1 className="text-xl font-bold">WealthVista</h1>
+            <h1 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-yellow-200 to-yellow-400">WealthVista</h1>
           </div>
           
           <LanguageSelector />
@@ -34,29 +34,35 @@ export default function Home() {
       {/* Main Content */}
       <main className="flex-grow container mx-auto px-4 py-6">
         {/* Calculator Navigation */}
-        <div className="mb-6 bg-white dark:bg-gray-800 rounded-lg shadow-sm p-2 flex overflow-x-auto md:justify-center gap-2">
+        <div className="mb-6 bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 rounded-lg shadow-md p-3 flex overflow-x-auto md:justify-center gap-3">
           <Button
             variant={activeTab === 'goal' ? 'default' : 'outline'}
             onClick={() => setActiveTab('goal')}
-            className="whitespace-nowrap"
+            className={`whitespace-nowrap ${activeTab === 'goal' ? 
+              'bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700' : 
+              'hover:border-indigo-300 dark:hover:border-indigo-700'}`}
           >
-            <Calculator className="h-4 w-4 mr-2" />
+            <FlagIcon className="h-4 w-4 mr-2" />
             {t('nav.goalBased')}
           </Button>
           <Button
             variant={activeTab === 'compare' ? 'default' : 'outline'}
             onClick={() => setActiveTab('compare')}
-            className="whitespace-nowrap"
+            className={`whitespace-nowrap ${activeTab === 'compare' ? 
+              'bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700' : 
+              'hover:border-cyan-300 dark:hover:border-cyan-700'}`}
           >
-            <Calculator className="h-4 w-4 mr-2" />
+            <Diff className="h-4 w-4 mr-2" />
             {t('nav.planComparison')}
           </Button>
           <Button
             variant={activeTab === 'basic' ? 'default' : 'outline'}
             onClick={() => setActiveTab('basic')}
-            className="whitespace-nowrap"
+            className={`whitespace-nowrap ${activeTab === 'basic' ? 
+              'bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-700 hover:to-green-700' : 
+              'hover:border-emerald-300 dark:hover:border-emerald-700'}`}
           >
-            <Calculator className="h-4 w-4 mr-2" />
+            <PiggyBankIcon className="h-4 w-4 mr-2" />
             {t('nav.basicSavings')}
           </Button>
         </div>

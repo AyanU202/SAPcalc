@@ -61,11 +61,13 @@ export function GoalBasedCalculator() {
   }, [setCalculationResult]);
 
   return (
-    <Card>
-      <CardHeader>
+    <Card className="border-indigo-200 dark:border-indigo-800 shadow-md overflow-hidden">
+      <CardHeader className="bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-950/50 dark:to-purple-950/50 border-b border-indigo-100 dark:border-indigo-800">
         <CardTitle className="flex items-center">
-          <FlagIcon className="h-5 w-5 mr-2 text-primary" />
-          {t('goalCalc.title')}
+          <FlagIcon className="h-5 w-5 mr-2 text-indigo-600 dark:text-indigo-400" />
+          <span className="bg-gradient-to-r from-indigo-700 to-purple-700 dark:from-indigo-400 dark:to-purple-400 text-transparent bg-clip-text font-bold">
+            {t('goalCalc.title')}
+          </span>
         </CardTitle>
       </CardHeader>
       <CardContent>
