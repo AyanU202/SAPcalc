@@ -57,6 +57,7 @@ const en = {
   chart: {
     title: "Investment Growth Chart",
     noData: "Complete a calculation to see your investment growth",
+    noDataDescription: "Fill out one of the calculator forms and click Calculate to visualize your investment growth over time",
     principal: "Principal",
     interest: "Interest",
     total: "Total Amount",
@@ -76,15 +77,15 @@ const en = {
     lightMode: "Light Mode"
   },
   about: {
-    title: "About FinCalc Pro",
+    title: "About WealthVista",
     appInfo: "App Information",
-    description: "FinCalc Pro is a comprehensive financial calculator designed to help you plan your savings and investments effectively.",
+    description: "WealthVista is a comprehensive financial calculator designed to help you plan your savings and investments effectively.",
     version: "Version 1.0.0",
     credits: "Credits",
     creator: "Created by",
     project: "Project: SAP",
     thankYou: "Thank You Note",
-    thankYouMessage: "Thank you for using FinCalc Pro. This application is designed to help you make better financial decisions by providing accurate calculations and visual representations of your investments."
+    thankYouMessage: "Thank you for using WealthVista. This application is designed to help you make better financial decisions by providing accurate calculations and visual representations of your investments."
   }
 };
 
