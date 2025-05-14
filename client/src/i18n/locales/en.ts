@@ -31,7 +31,8 @@ const en = {
     title: "Goal-based Savings Calculator",
     goalAmount: "Goal Amount",
     goalAmountHelp: "The total amount you want to save for your goal.",
-    requiredMonthlyInvestment: "Required Monthly Investment"
+    requiredMonthlyInvestment: "Required Monthly Investment",
+    goalSummary: "Goal Summary"
   },
   compareCalc: {
     title: "Plan Comparison Calculator",

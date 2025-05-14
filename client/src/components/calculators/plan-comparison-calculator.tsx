@@ -292,8 +292,8 @@ export function PlanComparisonCalculator() {
         </Form>
         
         {form.formState.isSubmitted && !form.formState.isSubmitting && (
-          <div className="mt-6 pt-4 border-t border-gray-200 dark:border-gray-700">
-            <h3 className="text-lg font-medium mb-3">{t('compareCalc.comparisonResults')}</h3>
+          <div className="mt-6 pt-4 border-t border-cyan-200 dark:border-cyan-800">
+            <h3 className="text-lg font-medium mb-3 gradient-heading gradient-cyan">{t('compareCalc.comparisonResults')}</h3>
             
             <div className="grid grid-cols-3 gap-3 mb-4">
               <div className="bg-gray-50 dark:bg-gray-800 p-3 rounded-lg"></div>
@@ -383,8 +383,11 @@ export function PlanComparisonCalculator() {
               </div>
             </div>
             
-            <div className="p-4 bg-gradient-to-r from-indigo-50 to-cyan-50 dark:from-indigo-900/30 dark:to-cyan-900/30 rounded-lg mb-4">
-              <h4 className="font-medium mb-3 text-gray-800 dark:text-gray-100">{t('compareCalc.differenceAnalysis')}</h4>
+            <div className="p-4 bg-gradient-to-r from-cyan-50 to-blue-50 dark:from-cyan-950/30 dark:to-blue-950/30 rounded-lg border border-cyan-100 dark:border-cyan-800 shadow-md mb-4">
+              <div className="flex items-center mb-3">
+                <Diff className="h-5 w-5 text-cyan-600 dark:text-cyan-400 mr-2" />
+                <h4 className="font-medium text-cyan-700 dark:text-cyan-400">{t('compareCalc.differenceAnalysis')}</h4>
+              </div>
               <div className="text-sm">
                 {getDifferenceText(
                   calculatorUtils.calculateBasic(

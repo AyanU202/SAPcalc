@@ -18,9 +18,10 @@ export default function Home() {
   const { activeTab, setActiveTab } = useCalculator();
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-50 via-indigo-50/20 to-gray-50 dark:from-gray-900 dark:via-indigo-950/10 dark:to-gray-900 text-gray-900 dark:text-gray-100">
       {/* Header */}
-      <header className="bg-gradient-to-r from-blue-700 via-indigo-700 to-purple-700 text-white shadow-md">
+      <header className="bg-gradient-to-r from-blue-700 via-indigo-700 to-purple-700 text-white shadow-lg relative">
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIj48cGF0aCBkPSJNMzYgMzBoLS4zNEE1Ljk5IDUuOTkgMCAwIDEgMzUgMzZoNWMwLTMuMzEtMi42OS02LTYtNm05IDhjMS42NiAwIDMtMS4zNCAzLTNzLTEuMzQtMy0zLTMtMyAxLjM0LTMgMyAxLjM0IDMgMyAzbTAtMTBWOWgtM1YxaC0ydjhoLTNWMWgtMnYxNGg4djE0SDI4Vjk5aDJ2LTJoMXYyaDJ2LTJoMXYyaDJ2LTJoMXYyaDJ2LTI0aC0yem0wIDRoLTF2MmgxdjJoLTF2MmgxdjJoLTF2MmgxdjRoLTlWMjZoOXYyem0tMTAgNFYxMUgxOVY3aC0ydjRoLTV2NmgydjQkaC0ydjRoLTJ2LTRoLTJ2NFYLOSL2LTRoLTJWN2gtMnY0aC01djE0aDlWMTF6bTAgMTBIMjJWMDFoMXYtMmgxdjJoMXYtMmgxdjJoMXYtMmgxdjJ6TTE1IDI5di0yaDN2LTJoLTN2LTJoMnYtMmgtMnYtMmgzVjE3aC0zdjtLTJILTN2MyIgLz48L2c+PC9nPjwvc3ZnPg==')] opacity-30"></div>
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <div className="flex items-center space-x-2">
             <Calculator className="h-6 w-6 text-yellow-300" />
@@ -80,7 +81,7 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-gradient-to-r from-blue-900 to-indigo-900 text-white py-4">
+      <footer className="animated-gradient-bg text-white py-6 shadow-lg">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">

@@ -242,17 +242,19 @@ export function BasicSavingsCalculator() {
         </Form>
         
         {form.formState.isSubmitted && !form.formState.isSubmitting && (
-          <div className="mt-6 pt-4 border-t border-gray-200 dark:border-gray-700">
-            <h3 className="text-lg font-medium mb-3">{t('common.results')}</h3>
+          <div className="mt-6 pt-4 border-t border-emerald-200 dark:border-emerald-800">
+            <h3 className="text-lg font-medium mb-3 gradient-heading gradient-emerald">{t('common.results')}</h3>
             
             <div className="grid grid-cols-2 gap-4">
-              <div className="bg-gray-50 dark:bg-gray-800 p-3 rounded-lg">
-                <p className="text-sm text-gray-500 dark:text-gray-400">{t('basicCalc.initialInvestment')}</p>
-                <p className="text-xl font-semibold text-gray-800 dark:text-gray-200">₹ {new Intl.NumberFormat('en-IN').format(form.getValues().initialAmount)}</p>
+              <div className="result-card card-gradient-emerald border border-emerald-100 dark:border-emerald-800">
+                <p className="text-sm text-gray-600 dark:text-gray-300 mb-1">{t('basicCalc.initialInvestment')}</p>
+                <div className="flex items-baseline">
+                  <p className="text-xl font-semibold text-emerald-700 dark:text-emerald-400">₹ {new Intl.NumberFormat('en-IN').format(form.getValues().initialAmount)}</p>
+                </div>
               </div>
-              <div className="bg-gray-50 dark:bg-gray-800 p-3 rounded-lg">
-                <p className="text-sm text-gray-500 dark:text-gray-400">{t('basicCalc.totalContributions')}</p>
-                <p className="text-xl font-semibold text-gray-800 dark:text-gray-200">₹ {new Intl.NumberFormat('en-IN').format(
+              <div className="result-card card-gradient-emerald border border-emerald-100 dark:border-emerald-800">
+                <p className="text-sm text-gray-600 dark:text-gray-300 mb-1">{t('basicCalc.totalContributions')}</p>
+                <p className="text-xl font-semibold text-emerald-700 dark:text-emerald-400">₹ {new Intl.NumberFormat('en-IN').format(
                   calculatorUtils.calculateBasic(
                     form.getValues().initialAmount,
                     form.getValues().regularContribution,
@@ -262,9 +264,9 @@ export function BasicSavingsCalculator() {
                   ).totalContributions
                 )}</p>
               </div>
-              <div className="bg-gray-50 dark:bg-gray-800 p-3 rounded-lg">
-                <p className="text-sm text-gray-500 dark:text-gray-400">{t('common.totalInterest')}</p>
-                <p className="text-xl font-semibold text-secondary">₹ {new Intl.NumberFormat('en-IN').format(
+              <div className="result-card card-gradient-emerald border border-emerald-100 dark:border-emerald-800">
+                <p className="text-sm text-gray-600 dark:text-gray-300 mb-1">{t('common.totalInterest')}</p>
+                <p className="text-xl font-semibold text-cyan-600 dark:text-cyan-400">₹ {new Intl.NumberFormat('en-IN').format(
                   calculatorUtils.calculateBasic(
                     form.getValues().initialAmount,
                     form.getValues().regularContribution,
@@ -274,9 +276,9 @@ export function BasicSavingsCalculator() {
                   ).totalInterest
                 )}</p>
               </div>
-              <div className="bg-gray-50 dark:bg-gray-800 p-3 rounded-lg">
-                <p className="text-sm text-gray-500 dark:text-gray-400">{t('common.finalAmount')}</p>
-                <p className="text-xl font-semibold text-accent">₹ {new Intl.NumberFormat('en-IN').format(
+              <div className="result-card card-gradient-emerald border border-emerald-100 dark:border-emerald-800 shadow-glow">
+                <p className="text-sm text-gray-600 dark:text-gray-300 mb-1">{t('common.finalAmount')}</p>
+                <p className="text-xl font-semibold gradient-heading gradient-emerald">₹ {new Intl.NumberFormat('en-IN').format(
                   calculatorUtils.calculateBasic(
                     form.getValues().initialAmount,
                     form.getValues().regularContribution,
@@ -288,16 +290,16 @@ export function BasicSavingsCalculator() {
               </div>
             </div>
             
-            <div className="mt-4 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
-              <h4 className="font-medium mb-2">{t('basicCalc.breakdown')}</h4>
-              <div className="flex items-center justify-between">
-                <div className="flex items-center">
-                  <div className="w-3 h-3 bg-primary rounded-full mr-2"></div>
-                  <span className="text-sm">{t('common.totalInvestment')}: <span className="font-medium">{getPercentages().principal}%</span></span>
+            <div className="mt-4 p-4 bg-gradient-to-r from-emerald-50 to-green-50 dark:from-emerald-950/30 dark:to-green-950/30 rounded-lg border border-emerald-100 dark:border-emerald-800 shadow-md">
+              <h4 className="font-medium mb-3 text-emerald-700 dark:text-emerald-400">{t('basicCalc.breakdown')}</h4>
+              <div className="flex flex-col md:flex-row md:items-center justify-between gap-3">
+                <div className="flex items-center bg-white/70 dark:bg-gray-800/50 p-2 rounded-md shadow-sm">
+                  <div className="w-4 h-4 bg-emerald-600 dark:bg-emerald-500 rounded-full mr-2"></div>
+                  <span className="text-sm text-gray-700 dark:text-gray-300">{t('common.totalInvestment')}: <span className="font-medium text-emerald-700 dark:text-emerald-400">{getPercentages().principal}%</span></span>
                 </div>
-                <div className="flex items-center">
-                  <div className="w-3 h-3 bg-secondary rounded-full mr-2"></div>
-                  <span className="text-sm">{t('common.totalInterest')}: <span className="font-medium">{getPercentages().interest}%</span></span>
+                <div className="flex items-center bg-white/70 dark:bg-gray-800/50 p-2 rounded-md shadow-sm">
+                  <div className="w-4 h-4 bg-cyan-600 dark:bg-cyan-500 rounded-full mr-2"></div>
+                  <span className="text-sm text-gray-700 dark:text-gray-300">{t('common.totalInterest')}: <span className="font-medium text-cyan-700 dark:text-cyan-400">{getPercentages().interest}%</span></span>
                 </div>
               </div>
             </div>

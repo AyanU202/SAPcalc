@@ -97,3 +97,62 @@
     @apply font-sans antialiased bg-background text-foreground;
   }
 }
+
+/* Custom styling */
+.gradient-heading {
+  @apply bg-clip-text text-transparent bg-gradient-to-r font-bold;
+}
+
+.gradient-indigo {
+  @apply from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400;
+}
+
+.gradient-cyan {
+  @apply from-cyan-600 to-blue-600 dark:from-cyan-400 dark:to-blue-400;
+}
+
+.gradient-emerald {
+  @apply from-emerald-600 to-green-600 dark:from-emerald-400 dark:to-green-400;
+}
+
+.card-gradient-indigo {
+  @apply bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-indigo-950/30 dark:to-purple-950/30;
+}
+
+.card-gradient-cyan {
+  @apply bg-gradient-to-br from-cyan-50 to-blue-50 dark:from-cyan-950/30 dark:to-blue-950/30;
+}
+
+.card-gradient-emerald {
+  @apply bg-gradient-to-br from-emerald-50 to-green-50 dark:from-emerald-950/30 dark:to-green-950/30;
+}
+
+.shadow-glow {
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.2);
+}
+
+.dark .shadow-glow {
+  box-shadow: 0 0 20px rgba(129, 140, 248, 0.2);
+}
+
+.result-card {
+  @apply p-4 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg;
+}
+
+.animated-gradient-bg {
+  background: linear-gradient(-45deg, #4f46e5, #06b6d4, #10b981, #7c3aed);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
