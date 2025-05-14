@@ -292,18 +292,18 @@ export function PlanComparisonCalculator() {
             
             <div className="grid grid-cols-3 gap-3 mb-4">
               <div className="bg-gray-50 dark:bg-gray-800 p-3 rounded-lg"></div>
-              <div className="bg-primary bg-opacity-10 dark:bg-opacity-20 p-3 rounded-lg text-center">
-                <p className="text-sm font-medium text-primary">{t('compareCalc.plan1')}</p>
+              <div className="bg-indigo-100 dark:bg-indigo-900/30 p-3 rounded-lg text-center">
+                <p className="text-sm font-medium text-indigo-600 dark:text-indigo-400">{t('compareCalc.plan1')}</p>
               </div>
-              <div className="bg-secondary bg-opacity-10 dark:bg-opacity-20 p-3 rounded-lg text-center">
-                <p className="text-sm font-medium text-secondary">{t('compareCalc.plan2')}</p>
+              <div className="bg-cyan-100 dark:bg-cyan-900/30 p-3 rounded-lg text-center">
+                <p className="text-sm font-medium text-cyan-600 dark:text-cyan-400">{t('compareCalc.plan2')}</p>
               </div>
               
               <div className="bg-gray-50 dark:bg-gray-800 p-3 rounded-lg">
                 <p className="text-sm text-gray-700 dark:text-gray-300">{t('common.totalInvestment')}</p>
               </div>
-              <div className="bg-primary bg-opacity-10 dark:bg-opacity-20 p-3 rounded-lg">
-                <p className="text-lg font-semibold text-primary">₹ {new Intl.NumberFormat('en-IN').format(
+              <div className="bg-indigo-100 dark:bg-indigo-900/30 p-3 rounded-lg">
+                <p className="text-lg font-semibold text-indigo-600 dark:text-indigo-400">₹ {new Intl.NumberFormat('en-IN').format(
                   calculatorUtils.calculateBasic(
                     form.getValues().plan1.initialInvestment,
                     form.getValues().plan1.monthlyContribution,
@@ -313,8 +313,8 @@ export function PlanComparisonCalculator() {
                   ).totalInvestment
                 )}</p>
               </div>
-              <div className="bg-secondary bg-opacity-10 dark:bg-opacity-20 p-3 rounded-lg">
-                <p className="text-lg font-semibold text-secondary">₹ {new Intl.NumberFormat('en-IN').format(
+              <div className="bg-cyan-100 dark:bg-cyan-900/30 p-3 rounded-lg">
+                <p className="text-lg font-semibold text-cyan-600 dark:text-cyan-400">₹ {new Intl.NumberFormat('en-IN').format(
                   calculatorUtils.calculateBasic(
                     form.getValues().plan2.initialInvestment,
                     form.getValues().plan2.monthlyContribution,
@@ -328,8 +328,8 @@ export function PlanComparisonCalculator() {
               <div className="bg-gray-50 dark:bg-gray-800 p-3 rounded-lg">
                 <p className="text-sm text-gray-700 dark:text-gray-300">{t('common.totalReturns')}</p>
               </div>
-              <div className="bg-primary bg-opacity-10 dark:bg-opacity-20 p-3 rounded-lg">
-                <p className="text-lg font-semibold text-primary">₹ {new Intl.NumberFormat('en-IN').format(
+              <div className="bg-indigo-100 dark:bg-indigo-900/30 p-3 rounded-lg">
+                <p className="text-lg font-semibold text-indigo-600 dark:text-indigo-400">₹ {new Intl.NumberFormat('en-IN').format(
                   calculatorUtils.calculateBasic(
                     form.getValues().plan1.initialInvestment,
                     form.getValues().plan1.monthlyContribution,
@@ -339,8 +339,8 @@ export function PlanComparisonCalculator() {
                   ).totalInterest
                 )}</p>
               </div>
-              <div className="bg-secondary bg-opacity-10 dark:bg-opacity-20 p-3 rounded-lg">
-                <p className="text-lg font-semibold text-secondary">₹ {new Intl.NumberFormat('en-IN').format(
+              <div className="bg-cyan-100 dark:bg-cyan-900/30 p-3 rounded-lg">
+                <p className="text-lg font-semibold text-cyan-600 dark:text-cyan-400">₹ {new Intl.NumberFormat('en-IN').format(
                   calculatorUtils.calculateBasic(
                     form.getValues().plan2.initialInvestment,
                     form.getValues().plan2.monthlyContribution,
@@ -354,8 +354,8 @@ export function PlanComparisonCalculator() {
               <div className="bg-gray-50 dark:bg-gray-800 p-3 rounded-lg">
                 <p className="text-sm text-gray-700 dark:text-gray-300">{t('common.finalAmount')}</p>
               </div>
-              <div className="bg-primary bg-opacity-10 dark:bg-opacity-20 p-3 rounded-lg">
-                <p className="text-lg font-semibold text-primary">₹ {new Intl.NumberFormat('en-IN').format(
+              <div className="bg-indigo-100 dark:bg-indigo-900/30 p-3 rounded-lg">
+                <p className="text-lg font-semibold text-indigo-600 dark:text-indigo-400">₹ {new Intl.NumberFormat('en-IN').format(
                   calculatorUtils.calculateBasic(
                     form.getValues().plan1.initialInvestment,
                     form.getValues().plan1.monthlyContribution,
@@ -365,8 +365,8 @@ export function PlanComparisonCalculator() {
                   ).finalAmount
                 )}</p>
               </div>
-              <div className="bg-secondary bg-opacity-10 dark:bg-opacity-20 p-3 rounded-lg">
-                <p className="text-lg font-semibold text-secondary">₹ {new Intl.NumberFormat('en-IN').format(
+              <div className="bg-cyan-100 dark:bg-cyan-900/30 p-3 rounded-lg">
+                <p className="text-lg font-semibold text-cyan-600 dark:text-cyan-400">₹ {new Intl.NumberFormat('en-IN').format(
                   calculatorUtils.calculateBasic(
                     form.getValues().plan2.initialInvestment,
                     form.getValues().plan2.monthlyContribution,
@@ -378,8 +378,8 @@ export function PlanComparisonCalculator() {
               </div>
             </div>
             
-            <div className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg mb-4">
-              <h4 className="font-medium mb-2">{t('compareCalc.differenceAnalysis')}</h4>
+            <div className="p-4 bg-gradient-to-r from-indigo-50 to-cyan-50 dark:from-indigo-900/30 dark:to-cyan-900/30 rounded-lg mb-4">
+              <h4 className="font-medium mb-3 text-gray-800 dark:text-gray-100">{t('compareCalc.differenceAnalysis')}</h4>
               <div className="text-sm">
                 {getDifferenceText(
                   calculatorUtils.calculateBasic(
@@ -409,18 +409,42 @@ export function PlanComparisonCalculator() {
 
 // Helper function to generate difference text
 function getDifferenceText(plan1Result: any, plan2Result: any, t: Function) {
-  const amountDiff = Math.abs(plan1Result.finalAmount - plan2Result.finalAmount);
-  const investmentDiff = Math.abs(plan1Result.totalInvestment - plan2Result.totalInvestment);
+  const plan1Final = plan1Result.finalAmount;
+  const plan2Final = plan2Result.finalAmount;
+  const plan1Investment = plan1Result.totalInvestment;
+  const plan2Investment = plan2Result.totalInvestment;
+  const plan1Interest = plan1Result.totalInterest;
+  const plan2Interest = plan2Result.totalInterest;
   
-  if (plan1Result.finalAmount > plan2Result.finalAmount) {
-    return t('compareCalc.plan1Better', {
-      amountDiff: new Intl.NumberFormat('en-IN').format(amountDiff),
-      investmentDiff: new Intl.NumberFormat('en-IN').format(investmentDiff)
-    });
+  // Calculate ROI percentages
+  const plan1ROI = Math.round((plan1Interest / plan1Investment) * 100);
+  const plan2ROI = Math.round((plan2Interest / plan2Investment) * 100);
+  
+  if (plan1Final > plan2Final) {
+    return (
+      <div>
+        <p className="mb-2 text-indigo-600 dark:text-indigo-400 font-medium">
+          Plan 1 provides better returns
+        </p>
+        <ul className="space-y-2 pl-2">
+          <li><span className="font-medium">₹{new Intl.NumberFormat('en-IN').format(plan1Final - plan2Final)}</span> more in final amount</li> 
+          <li>Requires <span className="font-medium">₹{new Intl.NumberFormat('en-IN').format(Math.abs(plan1Investment - plan2Investment))}</span> {plan1Investment > plan2Investment ? 'more' : 'less'} investment</li>
+          <li>Return on Investment: <span className="font-medium">{plan1ROI}%</span> (Plan 1) vs <span className="font-medium">{plan2ROI}%</span> (Plan 2)</li>
+        </ul>
+      </div>
+    );
   } else {
-    return t('compareCalc.plan2Better', {
-      amountDiff: new Intl.NumberFormat('en-IN').format(amountDiff),
-      investmentDiff: new Intl.NumberFormat('en-IN').format(investmentDiff)
-    });
+    return (
+      <div>
+        <p className="mb-2 text-cyan-600 dark:text-cyan-400 font-medium">
+          Plan 2 provides better returns
+        </p>
+        <ul className="space-y-2 pl-2">
+          <li><span className="font-medium">₹{new Intl.NumberFormat('en-IN').format(plan2Final - plan1Final)}</span> more in final amount</li>
+          <li>Requires <span className="font-medium">₹{new Intl.NumberFormat('en-IN').format(Math.abs(plan2Investment - plan1Investment))}</span> {plan2Investment > plan1Investment ? 'more' : 'less'} investment</li> 
+          <li>Return on Investment: <span className="font-medium">{plan2ROI}%</span> (Plan 2) vs <span className="font-medium">{plan1ROI}%</span> (Plan 1)</li>
+        </ul>
+      </div>
+    );
   }
 }

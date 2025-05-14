@@ -58,6 +58,7 @@ const en = {
     noData: "Complete a calculation to see your investment growth",
     principal: "Principal",
     interest: "Interest",
+    total: "Total Amount",
     years: "Years",
     amount: "Amount (₹)",
     summary: "Investment Summary",

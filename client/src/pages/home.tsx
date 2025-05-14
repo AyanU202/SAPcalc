@@ -23,8 +23,8 @@ export default function Home() {
       <header className="bg-primary text-white shadow-md">
         <div className="container mx-auto px-4 py-3 flex justify-between items-center">
           <div className="flex items-center space-x-2">
-            <Calculator className="h-5 w-5" />
-            <h1 className="text-xl font-bold">FinCalc Pro</h1>
+            <Calculator className="h-6 w-6 text-yellow-300" />
+            <h1 className="text-xl font-bold">WealthVista</h1>
           </div>
           
           <LanguageSelector />
@@ -74,32 +74,32 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-gray-800 text-white py-4">
+      <footer className="bg-gradient-to-r from-blue-900 to-indigo-900 text-white py-4">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">
-              <p className="text-sm">© 2023 FinCalc Pro - {t('footer.createdBy')} Ayan Roshan Umredkar</p>
+              <p className="text-sm">© 2023 WealthVista - {t('footer.createdBy')} Ayan Roshan Umredkar</p>
             </div>
             <div className="flex space-x-4">
               <Button
                 variant="outline"
                 size="sm"
-                className="text-white border-gray-700 hover:bg-gray-700"
+                className="text-white border-white/30 hover:bg-white/10 hover:text-white"
                 onClick={() => setShowAboutModal(true)}
               >
-                <InfoIcon className="h-4 w-4 mr-1" />
+                <InfoIcon className="h-4 w-4 mr-1 text-yellow-300" />
                 {t('footer.about')}
               </Button>
               <Button
                 variant="outline"
                 size="sm"
-                className="text-white border-gray-700 hover:bg-gray-700"
+                className="text-white border-white/30 hover:bg-white/10 hover:text-white"
                 onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
               >
                 {theme === 'dark' ? (
-                  <SunIcon className="h-4 w-4 mr-1" />
+                  <SunIcon className="h-4 w-4 mr-1 text-yellow-300" />
                 ) : (
-                  <MoonIcon className="h-4 w-4 mr-1" />
+                  <MoonIcon className="h-4 w-4 mr-1 text-yellow-300" />
                 )}
                 {theme === 'dark' ? t('footer.lightMode') : t('footer.darkMode')}
               </Button>

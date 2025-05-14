@@ -28,21 +28,48 @@ export function ChartVisualization() {
 
     // Create new chart
     chartInstance.current = new Chart(ctx, {
-      type: 'bar',
+      type: 'line',
       data: {
         labels,
         datasets: [
           {
             label: t('chart.principal'),
             data: principalData,
-            backgroundColor: 'hsl(var(--primary))',
-            barPercentage: 0.7,
+            borderColor: '#4F46E5', // Indigo
+            backgroundColor: 'rgba(79, 70, 229, 0.1)',
+            borderWidth: 3,
+            fill: true,
+            tension: 0.4,
+            pointBackgroundColor: '#4F46E5',
+            pointBorderColor: '#fff',
+            pointRadius: 4,
+            pointHoverRadius: 6,
           },
           {
             label: t('chart.interest'),
             data: interestData,
-            backgroundColor: 'hsl(var(--secondary))',
-            barPercentage: 0.7,
+            borderColor: '#06B6D4', // Cyan
+            backgroundColor: 'rgba(6, 182, 212, 0.1)',
+            borderWidth: 3,
+            fill: true,
+            tension: 0.4,
+            pointBackgroundColor: '#06B6D4',
+            pointBorderColor: '#fff',
+            pointRadius: 4,
+            pointHoverRadius: 6,
+          },
+          {
+            label: t('chart.total'),
+            data: totalData,
+            borderColor: '#10B981', // Emerald
+            backgroundColor: 'rgba(16, 185, 129, 0.05)',
+            borderWidth: 3,
+            fill: false,
+            tension: 0.4,
+            pointBackgroundColor: '#10B981',
+            pointBorderColor: '#fff',
+            pointRadius: 4,
+            pointHoverRadius: 6,
           }
         ]
       },
@@ -51,17 +78,21 @@ export function ChartVisualization() {
         maintainAspectRatio: false,
         scales: {
           x: {
-            stacked: true,
             title: {
               display: true,
               text: t('chart.years')
+            },
+            grid: {
+              color: 'rgba(160, 160, 160, 0.1)'
             }
           },
           y: {
-            stacked: true,
             title: {
               display: true,
               text: t('chart.amount')
+            },
+            grid: {
+              color: 'rgba(160, 160, 160, 0.1)'
             },
             ticks: {
               callback: function(value) {
@@ -155,12 +186,16 @@ export function ChartVisualization() {
         
         <div className="mt-4 flex flex-wrap gap-3 justify-center">
           <div className="flex items-center">
-            <span className="w-3 h-3 inline-block bg-primary rounded-full mr-1"></span>
+            <span className="w-3 h-3 inline-block rounded-full mr-1" style={{ backgroundColor: '#4F46E5' }}></span>
             <span className="text-sm">{t('chart.principal')}</span>
           </div>
           <div className="flex items-center">
-            <span className="w-3 h-3 inline-block bg-secondary rounded-full mr-1"></span>
+            <span className="w-3 h-3 inline-block rounded-full mr-1" style={{ backgroundColor: '#06B6D4' }}></span>
             <span className="text-sm">{t('chart.interest')}</span>
+          </div>
+          <div className="flex items-center">
+            <span className="w-3 h-3 inline-block rounded-full mr-1" style={{ backgroundColor: '#10B981' }}></span>
+            <span className="text-sm">{t('chart.total')}</span>
           </div>
         </div>
         
