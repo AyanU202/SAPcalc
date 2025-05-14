@@ -431,27 +431,63 @@ function getDifferenceText(plan1Result: any, plan2Result: any, t: Function) {
   if (plan1Final > plan2Final) {
     return (
       <div>
-        <p className="mb-2 text-indigo-600 dark:text-indigo-400 font-medium">
-          Plan 1 provides better returns
-        </p>
-        <ul className="space-y-2 pl-2">
-          <li><span className="font-medium">₹{new Intl.NumberFormat('en-IN').format(plan1Final - plan2Final)}</span> more in final amount</li> 
-          <li>Requires <span className="font-medium">₹{new Intl.NumberFormat('en-IN').format(Math.abs(plan1Investment - plan2Investment))}</span> {plan1Investment > plan2Investment ? 'more' : 'less'} investment</li>
-          <li>Return on Investment: <span className="font-medium">{plan1ROI}%</span> (Plan 1) vs <span className="font-medium">{plan2ROI}%</span> (Plan 2)</li>
-        </ul>
+        <div className="mb-3 bg-indigo-100/70 dark:bg-indigo-900/50 p-3 rounded-lg border border-indigo-200 dark:border-indigo-800 shadow-sm">
+          <p className="font-medium text-indigo-700 dark:text-indigo-400 flex items-center">
+            <span className="inline-block w-2 h-2 bg-indigo-500 rounded-full mr-2"></span>
+            Plan 1 provides better returns
+          </p>
+        </div>
+        <div className="bg-white/70 dark:bg-gray-800/50 rounded-lg p-3 border border-indigo-100 dark:border-indigo-800/40 shadow-sm">
+          <ul className="space-y-3">
+            <li className="flex justify-between items-center p-2 bg-gradient-to-r from-indigo-50/80 to-purple-50/80 dark:from-indigo-900/30 dark:to-purple-900/30 rounded-md">
+              <span className="text-gray-700 dark:text-gray-300">Final amount difference:</span>
+              <span className="font-medium text-indigo-700 dark:text-indigo-400">+₹{new Intl.NumberFormat('en-IN').format(plan1Final - plan2Final)}</span>
+            </li> 
+            <li className="flex justify-between items-center p-2 bg-gradient-to-r from-indigo-50/80 to-purple-50/80 dark:from-indigo-900/30 dark:to-purple-900/30 rounded-md">
+              <span className="text-gray-700 dark:text-gray-300">Investment difference:</span>
+              <span className="font-medium text-indigo-700 dark:text-indigo-400">{plan1Investment > plan2Investment ? '+' : '-'}₹{new Intl.NumberFormat('en-IN').format(Math.abs(plan1Investment - plan2Investment))}</span>
+            </li>
+            <li className="flex justify-between items-center p-2 bg-gradient-to-r from-indigo-50/80 to-purple-50/80 dark:from-indigo-900/30 dark:to-purple-900/30 rounded-md">
+              <span className="text-gray-700 dark:text-gray-300">Return on Investment:</span>
+              <div>
+                <span className="font-medium text-indigo-700 dark:text-indigo-400">{plan1ROI}%</span>
+                <span className="text-gray-500 dark:text-gray-400 mx-1">vs</span>
+                <span className="font-medium text-cyan-700 dark:text-cyan-400">{plan2ROI}%</span>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
     );
   } else {
     return (
       <div>
-        <p className="mb-2 text-cyan-600 dark:text-cyan-400 font-medium">
-          Plan 2 provides better returns
-        </p>
-        <ul className="space-y-2 pl-2">
-          <li><span className="font-medium">₹{new Intl.NumberFormat('en-IN').format(plan2Final - plan1Final)}</span> more in final amount</li>
-          <li>Requires <span className="font-medium">₹{new Intl.NumberFormat('en-IN').format(Math.abs(plan2Investment - plan1Investment))}</span> {plan2Investment > plan1Investment ? 'more' : 'less'} investment</li> 
-          <li>Return on Investment: <span className="font-medium">{plan2ROI}%</span> (Plan 2) vs <span className="font-medium">{plan1ROI}%</span> (Plan 1)</li>
-        </ul>
+        <div className="mb-3 bg-cyan-100/70 dark:bg-cyan-900/50 p-3 rounded-lg border border-cyan-200 dark:border-cyan-800 shadow-sm">
+          <p className="font-medium text-cyan-700 dark:text-cyan-400 flex items-center">
+            <span className="inline-block w-2 h-2 bg-cyan-500 rounded-full mr-2"></span>
+            Plan 2 provides better returns
+          </p>
+        </div>
+        <div className="bg-white/70 dark:bg-gray-800/50 rounded-lg p-3 border border-cyan-100 dark:border-cyan-800/40 shadow-sm">
+          <ul className="space-y-3">
+            <li className="flex justify-between items-center p-2 bg-gradient-to-r from-cyan-50/80 to-blue-50/80 dark:from-cyan-900/30 dark:to-blue-900/30 rounded-md">
+              <span className="text-gray-700 dark:text-gray-300">Final amount difference:</span>
+              <span className="font-medium text-cyan-700 dark:text-cyan-400">+₹{new Intl.NumberFormat('en-IN').format(plan2Final - plan1Final)}</span>
+            </li> 
+            <li className="flex justify-between items-center p-2 bg-gradient-to-r from-cyan-50/80 to-blue-50/80 dark:from-cyan-900/30 dark:to-blue-900/30 rounded-md">
+              <span className="text-gray-700 dark:text-gray-300">Investment difference:</span>
+              <span className="font-medium text-cyan-700 dark:text-cyan-400">{plan2Investment > plan1Investment ? '+' : '-'}₹{new Intl.NumberFormat('en-IN').format(Math.abs(plan2Investment - plan1Investment))}</span>
+            </li>
+            <li className="flex justify-between items-center p-2 bg-gradient-to-r from-cyan-50/80 to-blue-50/80 dark:from-cyan-900/30 dark:to-blue-900/30 rounded-md">
+              <span className="text-gray-700 dark:text-gray-300">Return on Investment:</span>
+              <div>
+                <span className="font-medium text-cyan-700 dark:text-cyan-400">{plan2ROI}%</span>
+                <span className="text-gray-500 dark:text-gray-400 mx-1">vs</span>
+                <span className="font-medium text-indigo-700 dark:text-indigo-400">{plan1ROI}%</span>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
     );
   }
