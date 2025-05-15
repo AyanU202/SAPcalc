@@ -18,6 +18,12 @@
       "sizes": "96x96",
       "type": "image/png"
     },
+     {
+      "src": "https://i.ibb.co/n844BKG9/android-launchericon-512-512-imageonline-co-9253898-1.png",
+      "sizes": "512x512",
+      "type": "image/png"
+      "purpose": "any maskable monochrome"
+    },
     {
       "src": "https://i.ibb.co/KjVxhWwz/128-png.png",
       "sizes": "128x128",
