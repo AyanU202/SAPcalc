@@ -25,8 +25,8 @@ type FormValues = z.infer<typeof formSchema>;
 
 export function GoalBasedCalculator() {
   const { t } = useTranslation();
-  const { setCalculationResult } = useCalculator();
-  
+  const { setCalculationResult, calculationResult } = useCalculator();
+
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -44,7 +44,7 @@ export function GoalBasedCalculator() {
       values.interestRate,
       values.frequency
     );
-    
+
     setCalculationResult({
       type: 'goal',
       ...result,
@@ -55,7 +55,6 @@ export function GoalBasedCalculator() {
     });
   };
 
-  // Reset calculation when component unmounts
   useEffect(() => {
     return () => setCalculationResult(null);
   }, [setCalculationResult]);
@@ -93,8 +92,11 @@ export function GoalBasedCalculator() {
                   </FormLabel>
                   <FormControl>
                     <CurrencyInput
-                      {...field}
-                      onChange={field.onChange}
+                      value={field.value}
+                      onValueChange={(value) => {
+                        const numeric = typeof value === 'string' ? parseFloat(value.replace(/,/g, '')) : value;
+                        field.onChange(numeric || 0);
+                      }}
                       placeholder="e.g. 100000"
                     />
                   </FormControl>
@@ -102,7 +104,7 @@ export function GoalBasedCalculator() {
                 </FormItem>
               )}
             />
-            
+
             <FormField
               control={form.control}
               name="timePeriod"
@@ -133,7 +135,7 @@ export function GoalBasedCalculator() {
                 </FormItem>
               )}
             />
-            
+
             <FormField
               control={form.control}
               name="interestRate"
@@ -165,7 +167,7 @@ export function GoalBasedCalculator() {
                 </FormItem>
               )}
             />
-            
+
             <FormField
               control={form.control}
               name="frequency"
@@ -188,9 +190,9 @@ export function GoalBasedCalculator() {
                 </FormItem>
               )}
             />
-            
-            <Button 
-              type="submit" 
+
+            <Button
+              type="submit"
               className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 transition-all duration-200 shadow-md"
             >
               <CalculatorIcon className="h-4 w-4 mr-2" />
@@ -198,34 +200,29 @@ export function GoalBasedCalculator() {
             </Button>
           </form>
         </Form>
-        
-        {form.formState.isSubmitted && !form.formState.isSubmitting && (
+
+        {form.formState.isSubmitted && !form.formState.isSubmitting && calculationResult && (
           <div className="mt-6 pt-4 border-t border-indigo-200 dark:border-indigo-800">
             <h3 className="text-lg font-medium mb-3 gradient-heading gradient-indigo">{t('common.results')}</h3>
-            
-                        <div className="grid grid-cols-2 gap-4 mb-4">
+
+            <div className="grid grid-cols-2 gap-4 mb-4">
               <div className="result-card card-gradient-indigo border border-indigo-100 dark:border-indigo-800 shadow-glow">
                 <p className="text-sm text-gray-600 dark:text-gray-300 mb-1">{t('goalCalc.requiredMonthlyInvestment')}</p>
-                <p className="text-xl font-semibold gradient-heading gradient-indigo">₹ {new Intl.NumberFormat('en-IN').format(
-                calculatorUtils.calculateGoalBased(
-                  form.getValues().goalAmount,
-                  form.getValues().timePeriod,
-                  form.getValues().interestRate,
-                  form.getValues().frequency
-                ).monthlyInvestment
-              )}</p>
+                <p className="text-xl font-semibold gradient-heading gradient-indigo">₹ {new Intl.NumberFormat('en-IN').format(calculationResult.monthlyInvestment)}</p>
                 <div className="w-12 h-1 bg-indigo-500/30 rounded-full mt-2"></div>
               </div>
               <div className="result-card card-gradient-indigo border border-indigo-100 dark:border-indigo-800">
                 <p className="text-sm text-gray-600 dark:text-gray-300 mb-1">{t('common.totalInvestment')}</p>
-                <p className="text-xl font-semibold text-indigo-700 dark:text-indigo-400">₹ {new Intl.NumberFormat('en-IN').format(
-                  calculatorUtils.calculateGoalBased(
-                    form.getValues().goalAmount,
-                    form.getValues().timePeriod,
-                    form.getValues().interestRate,
-                    form.getValues().frequency
-                  ).totalInvestment
-                )}</p>
+                <p className="text-xl font-semibold text-indigo-700 dark:text-indigo-400">₹ {new Intl.NumberFormat('en-IN').format(calculationResult.totalInvestment)}</p>
               </div>
               <div className="result-card card-gradient-indigo border border-indigo-100 dark:border-indigo-800">
                 <p className="text-sm text-gray-600 dark:text-gray-300 mb-1">{t('common.totalInterest')}</p>
+                <p className="text-xl font-semibold text-indigo-700 dark:text-indigo-400">₹ {new Intl.NumberFormat('en-IN').format(calculationResult.totalInterest)}</p>
+              </div>
+            </div>
+          </div>
+        )}
+      </CardContent>
+    </Card>
+  );
+}
