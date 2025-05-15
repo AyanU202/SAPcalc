@@ -1,0 +1,53 @@
+{
+  "name": "Multi-lingual Compound Interest Calculator",
+  "short_name": "Savings Calculator",
+  "description": "A multi-lingual Compound Interest Calculator with goal-based savings and plan comparison, created with the aim of giving back to society.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ebe2e2",
+  "theme_color": "#5438cc",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "https://i.ibb.co/JRrmX34q/72-png.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "https://i.ibb.co/zVBQB5RY/96-png.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "https://i.ibb.co/KjVxhWwz/128-png.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "https://i.ibb.co/3bXmhnV/144-png.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "https://i.ibb.co/7dj6JnnT/152-png.png",
+      "sizes": "152x152",
+      "type": "image/png"
+    },
+    {
+      "src": "https://i.ibb.co/chcvb2Bn/192-png.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://i.ibb.co/rRSn7PK9/384-png.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "https://i.ibb.co/Ps61XF6n/512-png.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
