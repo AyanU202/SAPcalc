@@ -203,59 +203,29 @@ export function GoalBasedCalculator() {
           <div className="mt-6 pt-4 border-t border-indigo-200 dark:border-indigo-800">
             <h3 className="text-lg font-medium mb-3 gradient-heading gradient-indigo">{t('common.results')}</h3>
             
-            <div className="grid grid-cols-2 gap-4 mb-4">
+                        <div className="grid grid-cols-2 gap-4 mb-4">
               <div className="result-card card-gradient-indigo border border-indigo-100 dark:border-indigo-800 shadow-glow">
                 <p className="text-sm text-gray-600 dark:text-gray-300 mb-1">{t('goalCalc.requiredMonthlyInvestment')}</p>
-                <p className="text-xl font-semibold gradient-heading gradient-indigo">₹ {new Intl.NumberFormat('en-IN').format(form.getValues().goalAmount / (form.getValues().timePeriod * 12))}</p>
+                <p className="text-xl font-semibold gradient-heading gradient-indigo">₹ {new Intl.NumberFormat('en-IN').format(
+                calculatorUtils.calculateGoalBased(
+                  form.getValues().goalAmount,
+                  form.getValues().timePeriod,
+                  form.getValues().interestRate,
+                  form.getValues().frequency
+                ).monthlyInvestment
+              )}</p>
                 <div className="w-12 h-1 bg-indigo-500/30 rounded-full mt-2"></div>
               </div>
               <div className="result-card card-gradient-indigo border border-indigo-100 dark:border-indigo-800">
                 <p className="text-sm text-gray-600 dark:text-gray-300 mb-1">{t('common.totalInvestment')}</p>
-                <p className="text-xl font-semibold text-indigo-700 dark:text-indigo-400">₹ {new Intl.NumberFormat('en-IN').format(form.getValues().goalAmount)}</p>
-              </div>
-              <div className="result-card card-gradient-indigo border border-indigo-100 dark:border-indigo-800">
-                <p className="text-sm text-gray-600 dark:text-gray-300 mb-1">{t('common.totalInterest')}</p>
-                <p className="text-xl font-semibold text-purple-600 dark:text-purple-400">₹ {new Intl.NumberFormat('en-IN').format(
-                  calculatorUtils.calculateGoalBased(
-                    form.getValues().goalAmount,
-                    form.getValues().timePeriod,
-                    form.getValues().interestRate,
-                    form.getValues().frequency
-                  ).totalInterest
-                )}</p>
-              </div>
-              <div className="result-card card-gradient-indigo border border-indigo-100 dark:border-indigo-800">
-                <p className="text-sm text-gray-600 dark:text-gray-300 mb-1">{t('common.finalAmount')}</p>
                 <p className="text-xl font-semibold text-indigo-700 dark:text-indigo-400">₹ {new Intl.NumberFormat('en-IN').format(
                   calculatorUtils.calculateGoalBased(
                     form.getValues().goalAmount,
                     form.getValues().timePeriod,
                     form.getValues().interestRate,
                     form.getValues().frequency
-                  ).finalAmount
+                  ).totalInvestment
                 )}</p>
               </div>
-            </div>
-            
-            <div className="p-4 bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-950/30 dark:to-purple-950/30 rounded-lg border border-indigo-100 dark:border-indigo-800 shadow-md">
-              <div className="flex items-center mb-2">
-                <FlagIcon className="h-5 w-5 text-indigo-600 dark:text-indigo-400 mr-2" />
-                <h4 className="font-medium text-indigo-700 dark:text-indigo-400">{t('goalCalc.goalSummary')}</h4>
-              </div>
-              <div className="flex flex-col space-y-2">
-                <div className="flex justify-between items-center bg-white/70 dark:bg-gray-800/50 p-2 rounded-md shadow-sm">
-                  <span className="text-sm text-gray-700 dark:text-gray-300">{t('common.timePeriod')}:</span>
-                  <span className="font-medium text-indigo-700 dark:text-indigo-400">{form.getValues().timePeriod} {t('common.years')}</span>
-                </div>
-                <div className="flex justify-between items-center bg-white/70 dark:bg-gray-800/50 p-2 rounded-md shadow-sm">
-                  <span className="text-sm text-gray-700 dark:text-gray-300">{t('common.interestRate')}:</span>
-                  <span className="font-medium text-purple-700 dark:text-purple-400">{form.getValues().interestRate}%</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-      </CardContent>
-    </Card>
-  );
-}
+              <div className="result-card card-gradient-indigo border border-indigo-100 dark:border-indigo-800">
+                <p className="text-sm text-gray-600 dark:text-gray-300 mb-1">{t('common.totalInterest')}</p>
